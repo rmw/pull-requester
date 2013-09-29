@@ -12,6 +12,7 @@ gem 'github_api'
 gem 'github-markdown'
 gem 'gemoji'
 gem 'newrelic_rpm'
+gem 'simple_form'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928185206) do
+ActiveRecord::Schema.define(:version => 20130928222523) do
+
+  create_table "api_keys", :force => true do |t|
+    t.integer "user_id",                         :null => false
+    t.integer "build_service_id",                :null => false
+    t.string  "key",              :limit => 127, :null => false
+  end
 
   create_table "build_services", :force => true do |t|
     t.string "name",          :limit => 127, :null => false
