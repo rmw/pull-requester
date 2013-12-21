@@ -5,7 +5,7 @@ BuildService.create(
 
 BuildService.create(
   name: 'CircleCI',
-  badge_pattern: 'https://circleci.com/gh/{{owner}}/{{repo}}/tree/{{branch}}'
+  badge_pattern: 'https://circleci.com/gh/{{owner}}/{{repo}}/tree/{{branch}}.png?circle-token='
 )
 
 puts 'BuildServices Created'

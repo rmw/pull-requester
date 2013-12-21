@@ -8,5 +8,10 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :api_keys
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email,
+    :password,
+    :password_confirmation,
+    :remember_me,
+    :name,
+    :api_keys_attributes
 end

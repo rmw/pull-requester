@@ -1,0 +1,22 @@
+%h2= "Welcome to user settings, #{current_user.name}"
+= simple_form_for(@user,
+  url: account_path,
+  html:{ :class => 'form-horizontal' }) do |f|
+
+  %label{ for: 'user_name', style: 'display: inline; margin-right: 10px;'} Name
+  =f.input_field :name
+
+  %h3 API Keys
+  %table#api_keys
+    %th Service
+    %th Key
+    %th Action
+    =f.simple_fields_for :api_keys do |ak|
+      %tr
+        %td= ak.input_field :build_service_id, collection: @build_services
+        %td= ak.input_field :key
+        %td
+          %button.btn.btn-danger Remove Key
+          -#=link_to "remove", '#'
+
+  =f.button :submit, 'Save', class: 'btn-success'
